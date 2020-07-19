@@ -13,7 +13,7 @@ const   Component = React.Component
 class App extends Component{
 	constructor(props){
         super(props)//调用父类的构造
-    this.getUrlData();
+    this.handleOk.bind(this);
         // fetch('http://39.106.105.240:8077/urls',{
         //       method:'GET',
         //       headers:{
@@ -32,14 +32,17 @@ class App extends Component{
         //       this.setState({data:data})
         //        console.log(data);
         //      })
+
+        setInterval(this.getUrlData,3000);
     }
+
     state = {
       filteredInfo: null,
     selectedRowKeys: [], // Check here to configure the default column
     loading: false,
   };
 	getUrlData=()=>{
-    fetch('http://39.106.105.240:8077/urls',{
+    fetch('http://39.106.105.240:8077/surl/surls',{
       method:'GET',
       headers:{
         'Content-Type':'application/json;charset=UTF-8'
@@ -62,7 +65,7 @@ class App extends Component{
                 cache:'default'})
               this.getUrlData()}
               }>删除</Button>
-          data[i].echarts=<MyEcharts url={data[i].url}/>
+          data[i].echarts=<MyEcharts url={tmp}/>
         }
         this.setState({data:data})
         console.log(data);
@@ -88,7 +91,7 @@ class App extends Component{
       this.setState({
         visible: false,
       });
-      //this.getUrlData();
+      this.getUrlData();
     }
 
     render(){
@@ -161,7 +164,7 @@ class App extends Component{
           destroyOnClose={true}
           footer={null}
         >
-        <MyForm //setParent={this.handleOk()}
+        <MyForm setParent={this.handleOk}
         />
         </Modal>
         </div>

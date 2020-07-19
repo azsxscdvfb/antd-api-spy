@@ -50,7 +50,11 @@ class MyEcharts extends Component {
       xAxis: {
         boundaryGap: false,
         data:date},
-      yAxis: {},
+      yAxis: {
+        name:"微秒",
+        type: "value",
+        scale:"true"
+      },
       series: [{
         name: '延时',
         type: 'line',

@@ -50,18 +50,6 @@ export default defineConfig({
               redirect: '/simple',
             },
 			{
-              path: '/todo',//url中path部分，http://localhost:8000/todo状态跌幅到这个页面
-              name: 'todo', //名称，国际化菜单配置根据这个名称来配置，如果不配置将直菜单将直接显示这个名称
-              icon: 'unordered-list',//菜单图标名称
-              component:'./todo'// 组件（页面）相对于src/pages的路径
-            },
-			{
-			  path: '/test',//url中path部分，http://localhost:8000/todo状态跌幅到这个页面
-              name: 'test', //名称，国际化菜单配置根据这个名称来配置，如果不配置将直菜单将直接显示这个名称
-              icon: 'unordered-list',//菜单图标名称
-              component:'./test'// 组件（页面）相对于src/pages的路径
-			},
-			{
 			  path: '/simple',//url中path部分，http://localhost:8000/todo状态跌幅到这个页面
               name: 'simple', //名称，国际化菜单配置根据这个名称来配置，如果不配置将直菜单将直接显示这个名称
               icon: 'unordered-list',//菜单图标名称

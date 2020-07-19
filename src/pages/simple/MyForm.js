@@ -7,7 +7,8 @@ import ProLayout, { PageContainer } from '@ant-design/pro-layout';
 const   Component = React.Component
 
 
-const MyForm = ()=>{
+const MyForm = (props)=>{
+  console.log(props)
   const [form] = Form.useForm();
   const onFinish = values=>{
     console.log(values)
@@ -19,7 +20,8 @@ const MyForm = ()=>{
               body: JSON.stringify(values),
               cache:'default'
             })
-   // this.props.setParent;
+    props.setParent();
+
   }
   return (
     <Form form={form} onFinish={onFinish}>
